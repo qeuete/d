@@ -1,0 +1,94 @@
+import math 
+
+while (True):
+ print ('''Выберите номер операции
+ 1 - Сложение
+ 2 - Вычитание
+ 3 - Умножение
+ 4 - Деление
+ 5 - Возведение в степень
+ 6 - Квадратный корень из числа
+ 7 - Факториал
+ 8 - синус
+ 9 - косинус
+ 10 - тангенс''')
+ d = float (input())
+
+ if d == 1:
+ 
+  print ('Введите число a=')
+  a = float (input ())
+
+  print ('Введите число b=')
+  b = float (input ())
+
+  print('a+b=', a+b)
+
+ elif d == 2:
+ 
+  print ('Введите число a=')
+  a = float (input ())
+
+  print ('Введите число b=')
+  b = float (input ())
+ 
+  print('a-b=', a-b)
+
+ elif d == 3:
+
+  print ('Введите число a=')
+  a = float (input ())
+
+  print ('Введите число b=')
+  b = float (input ())
+ 
+  print('a*b=', a*b)
+ 
+ elif d == 4:
+  print ('Введите число a=')
+  a = float (input ())
+ 
+  print ('Введите число b=')
+  b = float (input ())
+  if b == 0:
+     print ('Ошибка')
+  else:
+     print ('a/b=', a/b) 
+
+ elif d == 5:
+  print ('Введите число a=')
+  a = float (input ())
+ 
+  print ('Введите число b=')
+  b = float (input ())
+  
+  print ('a**b=', a**b)
+
+ elif d == 6:
+  print ('Введите число a=')
+  a = float (input ())
+  print('√a =', math.sqrt(a))
+ 
+ elif d == 7:
+  print ('Введите число a=')
+  a = float (input ())
+  print ('a!=', math.factorial(a)) 
+
+ elif d == 8:
+  print ('Введите число a=')
+  a = float (input ())
+  print('sin a=', math.sin(a))
+
+ elif d == 9:
+  print ('Введите число a=')
+  a = float (input ())
+  print ('cos a=', math.cos(a))
+ elif d == 10:
+  
+  print ('Введите число a=')
+  a = float (input ())
+  print ('tg a=', math.tan(a))
+
+ else:
+  print ('Операция не найдена')
+  
