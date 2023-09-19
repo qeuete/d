@@ -13,80 +13,94 @@ while (True):
  9 - косинус
  10 - тангенс''')
  d = float (input()) #тут мы просим задать число для выбора операции
-
+ 
  if d == 1: #с помощью if проверяем, что ввел пользователь
  
   print ('Введите число a=') #тут мы просим задать число
-  a = float (input ())
+ a = float (input ())
 
-  print ('Введите число b=') #тут мы просим задать число
-  b = float (input ())
+ print ('Введите число b=') #тут мы просим задать число
+ b = float (input ())
 
   print('a+b=', a+b)
 
  elif d == 2:
  
   print ('Введите число a=')
-  a = float (input ())
+ a = float (input ())
 
-  print ('Введите число b=')
-  b = float (input ())
- 
+ print ('Введите число b=')
+ b = float (input ())
+
   print('a-b=', a-b)
 
  elif d == 3:
 
-  print ('Введите число a=')
-  a = float (input ())
+print ('Введите число a=')
+ a = float (input ())
 
-  print ('Введите число b=')
-  b = float (input ())
+ print ('Введите число b=')
+ b = float (input ())
  
   print('a*b=', a*b)
  
  elif d == 4:
+  
   print ('Введите число a=')
-  a = float (input ())
- 
-  print ('Введите число b=')
-  b = float (input ())
-  if b == 0:
+ a = float (input ())
+
+ print ('Введите число b=')
+ b = float (input ())
+
+  if b == 0: #указываем, что деление на 0 невозможно
      print ('Ошибка')
   else:
      print ('a/b=', a/b) 
 
  elif d == 5:
-  print ('Введите число a=')
-  a = float (input ())
- 
-  print ('Введите число b=')
-  b = float (input ())
+
+ print ('Введите число a=')
+ a = float (input ())
+
+ print ('Введите число b=')
+ b = float (input ())
   
   print ('a**b=', a**b)
 
  elif d == 6:
+  
   print ('Введите число a=')
-  a = float (input ())
+ a = float (input ())
+
   print('√a =', math.sqrt(a))
  
  elif d == 7:
+  
   print ('Введите число a=')
-  a = float (input ())
+ a = float (input ())
+
   print ('a!=', math.factorial(a)) 
 
  elif d == 8:
-  print ('Введите число a=')
-  a = float (input ())
-  print('sin a=', math.sin(a))
 
- elif d == 9:
-  print ('Введите число a=')
-  a = float (input ())
-  print ('cos a=', math.cos(a))
- elif d == 10:
+ print ('Введите число a=')
+ a = float (input ())
+
+  print('sin a=', math.sin(a))
   
+ elif d == 9:
+
   print ('Введите число a=')
-  a = float (input ())
+ a = float (input ())
+
+  
+  print ('cos a=', math.cos(a))
+
+ elif d == 10:
+
+  print ('Введите число a=')
+ a = float (input ())
+
   print ('tg a=', math.tan(a))
 
  else:
