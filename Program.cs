@@ -14,7 +14,7 @@ namespace ConsoleApp1
             while (true)
             {
                 string c;
-                Console.WriteLine("Выберите операцию:  1 - Угадай число  2 - Таблица умножения 3 - не знаю 4 - Выход" );
+                Console.WriteLine("Выберите операцию:  1 - Угадай число  2 - Таблица умножения 3 - Делитель 4 - Выход" );
 
                 c = Console.ReadLine();
 
