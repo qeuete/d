@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1111
+namespace ConsoleApp1
 {
     internal class Program
     {
@@ -13,108 +13,94 @@ namespace ConsoleApp1111
         {
             while (true)
             {
-                Console.Clear();
-                double a, b;
                 string c;
-
-
-
-                Console.WriteLine("Выберите операцию:  1 - Сложение  2 - Вычитание 3 - Умножение 4 - Деление  5 - Возведение в степень 6 - Квадратный корень  7 - 1% от числа  8 - Факториал  9 - Выход из программы");
+                Console.WriteLine("Выберите операцию:  1 - Угадай число  2 - Таблица умножения 3 - не знаю 4 - Выход" );
 
                 c = Console.ReadLine();
 
-
                 if (c == "1")
                 {
-                    Console.WriteLine("Введите первое число");
-                    a = double.Parse(Console.ReadLine());
-
-                    Console.WriteLine("Введите второе число");
-                    b = double.Parse(Console.ReadLine());
-                    Console.WriteLine(a + b);
+                    Console.WriteLine("Угадай число от 0 до 100");
+                    Random rand = new Random();
+                    int numb;
+                    int secret = rand.Next(0, 100);
+                    while (true)
+                    {
+                        numb = int.Parse(Console.ReadLine());
+                        if (numb == secret)
+                        {
+                            Console.WriteLine("Число угадано!!! УРАААА!!1!!11!");
+                            break;
+                        }
+                        else
+                        {
+                            if (numb > secret)
+                            {
+                                Console.WriteLine("Меньше");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Больше");
+                            }
+                        }
+                    }
                 }
                 else if (c == "2")
                 {
-                    Console.WriteLine("Введите первое число");
-                    a = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Таблица умножения");
+                    int[,] umnozh = new int[,]
+                    {
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9 },
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9 },
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9 },
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9 },
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9 },
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9 },
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9 },
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9 },
+                        {1, 2, 3, 4, 5, 6, 7, 8, 9 },
 
-                    Console.WriteLine("Введите второе число");
-                    b = double.Parse(Console.ReadLine());
-                    Console.WriteLine(a - b);
+                    };
+                    for (int i = 1; i <= 10; i++)
+                    {
+                        for (int j = 1; j <= 10; j++)
+                        {
+                            Console.Write(i * j + "\t");
+                        }
+                        Console.WriteLine();
+                    }
+
+
+                        
                 }
-
                 else if (c == "3")
                 {
-                    Console.WriteLine("Введите первое число");
-                    a = double.Parse(Console.ReadLine());
 
-                    Console.WriteLine("Введите второе число");
-                    b = double.Parse(Console.ReadLine());
-                   
-                    Console.WriteLine(a * b);
+                    Console.Write("Введите число ");
+                    int num = int.Parse(Console.ReadLine());
+                    
+                    int i = 1;
+                    while (i <= num)
+                    {
+                        i++;
+                        if (num % i == 0)
+                            Console.WriteLine(" {0} / {1}", num, i);
+                    }
+
+
                 }
-
                 else if (c == "4")
                 {
-                    Console.WriteLine("Введите первое число");
-                    a = double.Parse(Console.ReadLine());
-
-                    Console.WriteLine("Введите второе число");
-                    b = double.Parse(Console.ReadLine());
-
-                    if (b == 0)
-                        Console.WriteLine("Ошбика");
-                    else
-                        Console.WriteLine(a / b);
-                }
-
-                else if (c == "5")
-                {
-                    Console.WriteLine("Введите первое число");
-                    a = double.Parse(Console.ReadLine());
-
-                    Console.WriteLine("Введите второе число");
-                    b = double.Parse(Console.ReadLine());
-                    Console.WriteLine (Math.Pow(a, b));
-                }
-                else if (c == "6")
-                {
-                    Console.WriteLine("Введите число");
-                    a = double.Parse(Console.ReadLine());
-                    Console.WriteLine (Math.Sqrt(a));
-                }
-                else if (c == "7") 
-                {
-                    Console.WriteLine("Введите число");
-                    a = double.Parse(Console.ReadLine());
-                    Console.WriteLine(Math.Round((double)(a/100)));
-                }
-                else if (c == "8")
-                {
-                    Console.WriteLine("Введите число");
-                    a = double.Parse(Console.ReadLine());
-                    double n = a;  //количество циклов в факториале
-                    double factorial = 1;   // значение факториала
-
-                    for (double i = 2; i <= n; i++) // цикл начинаем с 2, т.к. нет смысла начинать с 1
-                    {
-                        factorial = factorial * i;
-                    }
-                }
-
-
-                else if (c == "9")
-                {
-                    Console.WriteLine("Выход из программы");
+                    Console.WriteLine("Выход");
                     break;
                 }
                 else
                 {
                     Console.WriteLine("Операция не найдена");
                 }
-                Console.ReadLine(); 
-
+                Console.ReadLine();
             }
+
         }
     }
-}
+} 
